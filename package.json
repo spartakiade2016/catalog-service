@@ -1,14 +1,11 @@
 {
   "name": "example-service",
   "version": "1.0.0",
-  "description": "",
-  "author": "",
+  "description": "This is a service example",
+  "author": "Andreas Helmberger <public@ahelmberger.de>",
   "license": "MIT",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
+  "repository": "spartakiade2016/example-service",
   "scripts": {
     "start": "node index.js",
     "test": "mocha *.spec.js",
@@ -19,7 +16,7 @@
     "express": "^4.13.3",
     "express-endpoints": "^1.0.0",
     "http-graceful-shutdown": "^1.0.4",
-    "multiagent": "^1.0.2"
+    "multiagent": "^1.1.0"
   },
   "devDependencies": {
     "mocha": "^2.4.5",

@@ -1,5 +1,7 @@
 # example-service
 
+This is a service example
+
 ## How to use
 
 The following npm scripts are available:
