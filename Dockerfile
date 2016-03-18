@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:4.4.0
+FROM mhart/alpine-node:5.8.0
 MAINTAINER spartakiade2016
 
 RUN mkdir -p /usr/src/app
@@ -16,8 +16,8 @@ ENV SERVICE_CHECK_HTTP=/healthcheck
 ENV SERVICE_CHECK_INTERVAL=10s
 ENV SERVICE_CHECK_TIMEOUT=2s
 ENV SERVICE_ENDPOINTS=/endpoints
-ENV DISCOVERY_SERVERS=http://???.???.???.001:8500,http://???.???.???.002:8500,http://???.???.???.003:8500
+ENV DISCOVERY_SERVERS=http://46.101.251.23:8500
 
 EXPOSE 3000
 
-CMD ["node", "index.js"]
+ENTRYPOINT ["node", "index.js"]
