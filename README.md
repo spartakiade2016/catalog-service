@@ -1,4 +1,4 @@
-# example-service
+# catalog-service
 
 This is a service example
 

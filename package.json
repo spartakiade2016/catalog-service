@@ -1,11 +1,11 @@
 {
-  "name": "example-service",
+  "name": "catalog-service",
   "version": "1.0.0",
   "description": "This is a service example",
   "author": "Andreas Helmberger <public@ahelmberger.de>",
   "license": "MIT",
   "private": true,
-  "repository": "spartakiade2016/example-service",
+  "repository": "spartakiade2016/catalog-service",
   "scripts": {
     "start": "node index.js",
     "test": "mocha *.spec.js",
