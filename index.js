@@ -28,15 +28,20 @@ app.get(SERVICE_CHECK_HTTP, (req, res) => res.send({ uptime: process.uptime() })
 app.get(SERVICE_ENDPOINTS, endpoints());
 
 // Add all other service routes
-app.get('/superstars', (req, res) => {
-  res.send([
-    'Scarlett Johansson',
-    'Leonardo DiCaprio',
-    'Jennifer Lawrence',
-    'Ashton Kutcher',
-    'Kate Beckinsale',
-    'Robert Downey Jr.'
-  ]);
+app.get('/products', (req, res) => {
+    res.send({
+        products: [{
+            productId: '4711',
+            title: 'Foobar',
+            quantity: 3,
+            price: 12.56
+        }, {
+            productId: '0815',
+            title: 'Foobaz',
+            quantity: 1,
+            price: 7.99
+        }]
+    });
 });
 
 // Start the server
