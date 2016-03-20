@@ -48,7 +48,7 @@ app.post('/addProduct', (req, res) => {
 });
 
 const getProducts = () => {
-    var products = JSON.parse(fs.readFileSync(__dirname + "/products.json"));
+    var products = JSON.parse(fs.readFileSync(__dirname + "/products.json", "utf8"));
 
     return products;
 };
@@ -57,7 +57,7 @@ const addProduct = (product) => {
     var products = getProducts();
     products.push(product);
 
-    fs.writeFileSync(__dirname + "/products.json", JSON.stringify(product));
+    fs.writeFileSync(__dirname + "/products.json", JSON.stringify(product), "utf8");
 };
 
 // Start the server
