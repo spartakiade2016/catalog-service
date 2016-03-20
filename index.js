@@ -55,9 +55,9 @@ const getProducts = () => {
 
 const addProduct = (product) => {
     var products = getProducts();
-    products.push(product);
+    products.products.push(product);
 
-    fs.writeFileSync(__dirname + "/products.json", JSON.stringify(product), "utf8");
+    fs.writeFileSync(__dirname + "/products.json", JSON.stringify(products), "utf8");
 };
 
 // Start the server
