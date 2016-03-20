@@ -1,0 +1,14 @@
+﻿[
+  {
+    "productId": "4711",
+    "title": "Foobar",
+    "quantity": 3,
+    "price": 12.56
+  },
+  {
+    "productId": "0815",
+    "title": "Foobaz",
+    "quantity": 1,
+    "price": 7.99
+  }
+]

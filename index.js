@@ -5,6 +5,8 @@ const cors = require('cors');
 const endpoints = require('express-endpoints');
 const gracefulShutdown = require('http-graceful-shutdown');
 const agent = require('multiagent');
+const fs = required('fs');
+const bodyParser = required('body-parser');
 
 // Define some default values if not set in environment
 const PORT = process.env.PORT || 3000;
@@ -21,6 +23,11 @@ const app = express();
 // Add CORS headers
 app.use(cors());
 
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+app.use(bodyParser.json());
+
 // Add health check endpoint
 app.get(SERVICE_CHECK_HTTP, (req, res) => res.send({ uptime: process.uptime() }));
 
@@ -30,19 +37,28 @@ app.get(SERVICE_ENDPOINTS, endpoints());
 // Add all other service routes
 app.get('/products', (req, res) => {
     res.send({
-        products: [{
-            productId: '4711',
-            title: 'Foobar',
-            quantity: 3,
-            price: 12.56
-        }, {
-            productId: '0815',
-            title: 'Foobaz',
-            quantity: 1,
-            price: 7.99
-        }]
+        products: getProducts()
     });
 });
+
+app.post('/addProduct', (req, res) => {
+    addProduct(req.body.product);
+
+    res.status(201);
+});
+
+const getProducts = () => {
+    var products = JSON.parse(fs.readFileSync(__dirname + "/products.json"));
+
+    return products;
+};
+
+const addProduct = (product) => {
+    var products = getProducts();
+    products.push(product);
+
+    fs.writeFileSync(__dirname + "/products.json", JSON.stringify(product));
+};
 
 // Start the server
 const server = app.listen(PORT, () => console.log(`Service listening on port ${PORT} ...`));

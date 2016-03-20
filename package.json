@@ -16,7 +16,8 @@
     "express": "^4.13.3",
     "express-endpoints": "^1.0.0",
     "http-graceful-shutdown": "^1.0.4",
-    "multiagent": "^1.1.0"
+    "multiagent": "^1.1.0",
+    "body-parser": "1.15.0"
   },
   "devDependencies": {
     "mocha": "^2.4.5",
