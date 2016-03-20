@@ -5,8 +5,8 @@ const cors = require('cors');
 const endpoints = require('express-endpoints');
 const gracefulShutdown = require('http-graceful-shutdown');
 const agent = require('multiagent');
-const fs = required('fs');
-const bodyParser = required('body-parser');
+const fs = require('fs');
+const bodyParser = require('body-parser');
 
 // Define some default values if not set in environment
 const PORT = process.env.PORT || 3000;
